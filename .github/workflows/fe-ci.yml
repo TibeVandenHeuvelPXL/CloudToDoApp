@@ -23,12 +23,12 @@ jobs:
       working-directory: ./frontend
 
     - name: unit tests and creates a report
-      run: npm test --code-coverage --browsers=ChromeHeadless
+      run: npm test -- --code-coverage
       working-directory: ./frontend
 
     - name: Better code coverage reporting
       uses: mridang/action-test-reporter@v1
       with:
         github-token: ${{ secrets.GH_TOKEN }}
-        coverage-file: ./coverage/clover.xml
-        working-directory: ./
+        coverage-file: ./frontend/coverage/clover.xml
+        working-directory: ./frontend
