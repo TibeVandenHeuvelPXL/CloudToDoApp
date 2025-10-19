@@ -23,7 +23,7 @@ jobs:
       working-directory: ./frontend
 
     - name: unit tests and creates a report
-      run: npm test -- --coverage
+      run: npm test --code-coverage
       working-directory: ./frontend
 
     - name: Better code coverage reporting
