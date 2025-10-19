@@ -19,11 +19,12 @@ jobs:
       working-directory: ./backend
 
     - name: Build code
-      run: npm run build
+      run: npm run start
       working-directory: ./backend
 
     - name: unit tests and creates a report
       run: npm test
+      working-directory: ./backend
 
     - name: Better Test Reports Action
       uses: mridang/action-test-reporter@v1
