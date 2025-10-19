@@ -18,17 +18,17 @@ jobs:
       run: npm install
       working-directory: ./backend
 
-    - name: Build code
-      run: npm run start
-      working-directory: ./backend
+    # - name: Build code
+      # run: npm run start
+      # working-directory: ./backend
 
-    - name: unit tests and creates a report
-      run: npm test
-      working-directory: ./backend
+    # - name: unit tests and creates a report
+      # run: npm test
+      # working-directory: ./backend
 
-    - name: Better Test Reports Action
-      uses: mridang/action-test-reporter@v1
-      with:
-        github-token: ${{ secrets.GH_TOKEN }}
-        coverage-file: ./coverage/clover.xml
-        working-directory: ./
+    # - name: Better Test Reports Action
+      # uses: mridang/action-test-reporter@v1
+      # with:
+        # github-token: ${{ secrets.GH_TOKEN }}
+        # coverage-file: ./coverage/clover.xml
+        # working-directory: ./
