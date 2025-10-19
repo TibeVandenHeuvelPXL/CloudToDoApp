@@ -23,7 +23,7 @@ jobs:
       working-directory: ./frontend
 
     - name: unit tests and creates a report
-      run: npm test -- --code-coverage
+      run: npm test -- --code-coverage --browsers=ChromeHeadless
       working-directory: ./frontend
 
     - name: Better code coverage reporting
