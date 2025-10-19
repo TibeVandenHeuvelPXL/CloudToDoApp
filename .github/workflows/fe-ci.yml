@@ -16,12 +16,15 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      working-directory: ./frontend
 
     - name: Build code
       run: npm run build
+      working-directory: ./frontend
 
     - name: unit tests and creates a report
       run: npm test -- --coverage
+      working-directory: ./frontend
 
     - name: Better code coverage reporting
       uses: mridang/action-test-reporter@v1
