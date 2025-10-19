@@ -1,0 +1,31 @@
+name: backend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5.0.0
+
+    - name: setup up NPM framework
+      uses: actions/setup-node@v4.4.0
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build code
+      run: npm run build
+
+    - name: unit tests and creates a report
+      run: npm test
+
+    - name: Better Test Reports Action
+      uses: mridang/action-test-reporter@v1
+      with:
+        github-token: ${{ secrets.GH_TOKEN }}
+        coverage-file: ./coverage/clover.xml
+        working-directory: ./
